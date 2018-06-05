@@ -11,13 +11,28 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { PendientesComponent } from '../pages/pendientes/pendientes.component';
+import { TerminadosComponent } from '../pages/terminados/terminados.component';
+import { ListaDeseosService } from './services/lista-deseos.service';
+import { AgregarComponent } from '../pages/agregar/agregar.component';
+import { DetalleComponent } from '../pages/detalle/detalle.component';
+
+import { PlaceHolderPipe } from './pipes/placeholder.pipes';
+import { PendientesPipe } from './pipes/pendientes.pipes';
+
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PendientesComponent,
+    TerminadosComponent,
+    AgregarComponent,
+    DetalleComponent,
+    PlaceHolderPipe,
+    PendientesPipe
   ],
   imports: [
     BrowserModule,
@@ -29,10 +44,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    TerminadosComponent,
+    AgregarComponent,
+    PendientesComponent,
+    DetalleComponent
   ],
   providers: [
     StatusBar,
+    ListaDeseosService,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
